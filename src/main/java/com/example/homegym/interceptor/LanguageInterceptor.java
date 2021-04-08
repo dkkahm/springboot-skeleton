@@ -19,6 +19,11 @@ public class LanguageInterceptor implements HandlerInterceptor {
         String language = request.getHeader("Accept-Language");
         if(language == null) {
             language = defaultLanguage;
+        } else {
+            int indexOfBreak = language.indexOf('-');
+            if(indexOfBreak != -1) {
+                language = language.substring(0, indexOfBreak);
+            }
         }
         request.setAttribute("language", language);
 
