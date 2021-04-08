@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    username: homegym
+    password: 1234
+    url: jdbc:mysql://localhost:3306/homegym
+
+homegym:
+  security:
+    token: test
+
