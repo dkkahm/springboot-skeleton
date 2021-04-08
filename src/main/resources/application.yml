@@ -7,4 +7,5 @@ spring:
 homegym:
   security:
     token: test
-
+  defaults:
+    language: ko

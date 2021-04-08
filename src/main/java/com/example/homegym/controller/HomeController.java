@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 @RestController
@@ -30,5 +31,11 @@ public class HomeController {
     @PostMapping("/account")
     public AccountResponse account(@Valid @RequestBody AccountRequest accountRequest) {
         return AccountResponse.builder().accountId(accountRequest.getAccountId()).build();
+    }
+
+    @GetMapping("/lang")
+    public String lang(HttpServletRequest request) {
+        String language = (String)request.getAttribute("language");
+        return language;
     }
 }

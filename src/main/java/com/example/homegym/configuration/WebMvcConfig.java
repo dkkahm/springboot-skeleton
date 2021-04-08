@@ -1,23 +1,24 @@
 package com.example.homegym.configuration;
 
-import com.example.homegym.interceptor.TestInterceptor;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.homegym.interceptor.CheckTokenInterceptor;
+import com.example.homegym.interceptor.LanguageInterceptor;
+import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
+@AllArgsConstructor
 public class WebMvcConfig implements WebMvcConfigurer {
-    private TestInterceptor testInterceptor;
-
-    WebMvcConfig(TestInterceptor testInterceptor) {
-        this.testInterceptor = testInterceptor;
-    }
+    private CheckTokenInterceptor checkTokenInterceptor;
+    private LanguageInterceptor languageInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(testInterceptor)
+        registry.addInterceptor(checkTokenInterceptor)
                 .addPathPatterns("/test");
+
+        registry.addInterceptor(languageInterceptor)
+                .addPathPatterns("/**");
     }
 }
