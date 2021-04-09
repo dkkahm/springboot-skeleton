@@ -17,3 +17,19 @@
 - test/resources/application-test.properteis has test specific settings
 - TestClasses are annotated with @ActiveProfiles("test")
 - Bootstrap Classes are annotated with @Profile({"local", "test"})
+- for staging and production, deploy application.properties with jar
+
+### Databse
+- local
+  - service
+    - for manual functionality checking
+  - service_test
+    - for automative test
+- jenkins
+  - service_test
+    - for automative test
+- staging
+  - service
+- production
+  - service
+
