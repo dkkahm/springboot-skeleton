@@ -31,13 +31,18 @@ spring.jpa.hibernate.ddl-auto=...
 - local
   - service
     - for manual functionality checking
+    - update
   - service_test
     - for automative test
+    - create-drop
 - jenkins
   - service_test
     - for automative test
+    - create-drop
 - staging
   - service
+  - update
 - production
   - service
+  - validate
 
