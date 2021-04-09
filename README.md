@@ -18,6 +18,14 @@
 - TestClasses are annotated with @ActiveProfiles("test")
 - Bootstrap Classes are annotated with @Profile({"local", "test"})
 - for staging and production, deploy application.properties with jar
+- for jenkis use 'Invoke top-level Maven targets / advanced / Properties
+```
+spring.profiles.active=test
+spring.datasource.url=...
+spring.datasource.username=...
+spring.datasource.password=...
+spring.jpa.hibernate.ddl-auto=...
+```
 
 ### Databse
 - local
