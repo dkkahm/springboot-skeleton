@@ -27,7 +27,7 @@ spring.datasource.password=...
 spring.jpa.hibernate.ddl-auto=...
 ```
 
-### Databse
+### Database
 - local
   - service
     - for manual functionality checking
