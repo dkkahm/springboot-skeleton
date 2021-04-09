@@ -41,8 +41,8 @@ spring.jpa.hibernate.ddl-auto=...
     - create-drop
 - staging
   - service
-  - update
+    - update
 - production
   - service
-  - validate
+    - validate
 
