@@ -14,10 +14,14 @@
 - default profile is local
 - main/resources/application.properties has default settings
 - main/resources/application-local.properties has local specific settings
+  - spring.jpa.hibernate.ddl-auto=update
 - test/resources/application-test.properteis has test specific settings
+  - spring.jpa.hibernate.ddl-auto=create-drop
 - TestClasses are annotated with @ActiveProfiles("test")
-- Bootstrap Classes are annotated with @Profile({"local", "test"})
+- Bootstrap Classes are annotated with @Profile("local")
 - for staging and production, deploy application.properties with jar
+  - for staging, spring.jpa.hibernate.ddl-auto=update
+  - for production, spring.jpa.hibernate.ddl-auto=validate
 - for jenkis use 'Invoke top-level Maven targets / advanced / Properties
 ```
 spring.profiles.active=test
